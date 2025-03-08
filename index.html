@@ -14,7 +14,7 @@
   <body>
     <main class="main">
       <form class="form" action="#" novalidate>
-        <div class="form__title">Contact Us</div>
+        <h1 class="form__title">Contact Us</h1>
         <div class="form__fields">
           <div class="form__section">
             <div class="field">
@@ -63,10 +63,10 @@
           </label>
           <span class="error">To submit this form, please consent to being contacted</span>
         </div>
-        <button class="form__button" type="submit" tabindex="0">Submit</button>
+        <button class="form__button" type="submit" tabindex="0" aria-label="submit button">Submit</button>
       </form>
     </main>
-    <div class="popup">
+    <div class="popup" aria-label="success popup">
       <div class="popup__wrap">
         <div class="popup__title">Message Sent!</div>
         <p class="popup__text">Thanks for completing the form. We'll be in touch soon!</p>
