@@ -1,81 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <title>Frontend Mentor | Contact form</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/styles/style.css">
-  <script defer src="./assets/scripts/main.js"></script>
-</head>
-<body>
-  <main class="main">
-    <form class="form" action="">
-      <div class="form__title">Contact Us</div>
-
-      <div class="form__fields">
-        <div class="form__section">
-          <div class="field">
-            <label class="field__label" for="first-name">First Name</label>
-            <input class="field__input" type="text" id="first-name" required/>
-            <span class="error">This field is required</span>
-          </div>
-          <div class="field">
-            <label class="field__label" for="last-name">Last Name</label>
-            <input class="field__input" type="text" id="last-name" required/>
-            <span class="error">This field is required</span>
-          </div>
-        </div>
-        <div class="field">
-          <label class="field__label" for="email">Email Address</label>
-          <input class="field__input" type="email" id="email" required/>
-          <span class="error">Please enter a valid email address</span>
-        </div>
-
-        <div>
-          <div class="field__label mb">Query Type</div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <title>Frontend Mentor | Contact form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <script defer src="./assets/scripts/main.js"></script>
+  </head>
+  <body>
+    <main class="main">
+      <form class="form" action="#" novalidate>
+        <div class="form__title">Contact Us</div>
+        <div class="form__fields">
           <div class="form__section">
-            <label class="field-radio" for="general">
-              <input class="field-radio__input" type="radio" id="general" name="type" required>
-              <span class="field-radio__custom"></span>
-              <span class="field-radio__text">General Enquiry</span>
-            </label>
-  
-            <label class="field-radio" for="support">
-              <input class="field-radio__input" type="radio" id="support" name="type" required>
-              <span class="field-radio__custom"></span>
-              <span class="field-radio__text">Support Request</span>
-            </label>
+            <div class="field">
+              <label class="field__label" for="first-name">First Name</label>
+              <input class="field__input" type="text" id="first-name" name="first-name" autocomplete="name" tabindex="0" required/>
+              <span class="error">This field is required</span>
+            </div>
+            <div class="field">
+              <label class="field__label" for="last-name">Last Name</label>
+              <input class="field__input" type="text" name="last-name" id="last-name" tabindex="0" required/>
+              <span class="error">This field is required</span>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="email">Email Address</label>
+            <input class="field__input" type="email" name="email" id="email" tabindex="0" required/>
+            <span class="error">Please enter a valid email address</span>
+          </div>
+          <fieldset class="field-radio-group">
+            <div class="field__label">Query Type</div>
+            <div class="form__section">
+              <label class="field-radio" for="general">
+                <input class="field-radio__input" type="radio" id="general" name="type" value="general" tabindex="0" required>
+                <span class="field-radio__custom"></span>
+                <span class="field-radio__text">General Enquiry</span>
+              </label>
+              <label class="field-radio" for="support">
+                <input class="field-radio__input" type="radio" id="support" name="type" value="support" tabindex="0" required>
+                <span class="field-radio__custom"></span>
+                <span class="field-radio__text">Support Request</span>
+              </label>
+            </div>
+            <span class="error">Please select a query type</span>
+          </fieldset>
+          <div class="field">
+            <label class="field__label" for="text">Message</label>
+            <textarea class="field__input field__input--area" name="message" id="text" tabindex="0" required></textarea>
+            <span class="error">This field is required</span>
           </div>
         </div>
-        
-        <div class="textarea">
-          <label class="field__label" for="text">Message</label>
-          <textarea class="texxtarea__area" name="text" id="text" required></textarea>
-          <span class="error">This field is required</span>
+        <div class="checkbox">
+          <label class="checkbox__label" for="consent">
+            <input class="checkbox__input" type="checkbox" id="consent" tabindex="0" required>
+            <span class="checkbox__custom"></span>
+            <span class="checkbox__text">I consent to being contacted by the team</span>
+          </label>
+          <span class="error">To submit this form, please consent to being contacted</span>
         </div>
+        <button class="form__button" type="submit" tabindex="0">Submit</button>
+      </form>
+    </main>
+    <div class="popup">
+      <div class="popup__wrap">
+        <div class="popup__title">Message Sent!</div>
+        <p class="popup__text">Thanks for completing the form. We'll be in touch soon!</p>
       </div>
-
-
-      <label class="checkbox" for="consent">
-        <input class="checkbox__input" type="checkbox" id="consent" required>
-        <span class="checkbox__custom"></span>
-        <span class="checkbox__text">I consent to being contacted by the team</span>
-      </label>
-
-
-      <button class="form__button" type="submit">Submit</button>
-    </form>
-  </main>
-
-  <div class="popup active">
-    <div class="popup__wrap">
-      <div class="popup__title">Message Sent!</div>
-      <p class="popup__text">Thanks for completing the form. We'll be in touch soon!</p>
     </div>
-  </div>
-</body>
+  </body>
 </html>

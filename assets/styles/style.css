@@ -129,10 +129,32 @@ body {
 }
 
 .field__input:focus,
-.field__input:hover,
-.field__input:focus-visible {
-  border: 1px solid var(--color-green-600);
+.field__input:hover {
+  border-color: var(--color-green-600);
   outline: none;
+} 
+
+.field__input:focus-visible {
+  background: var(--color-green-200); 
+}
+
+.field__input.field__input--error {
+  border-color: var(--color-red)
+}
+
+.field__input.field__input--error ~ .error {
+  display: block;
+}
+
+.field__input--area {
+  height: 240px;  
+  resize: none;
+}
+
+@media (min-width: 600px) {
+  .field__input--area {
+    height: 105px;  
+  }
 }
 
 .field-radio {
@@ -151,6 +173,13 @@ body {
   border: 1px solid var(--color-green-600);
 }
 
+.field-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: none;
+}
+
 .field-radio__text {
   font-size: 18px;
   line-height: 1.5;
@@ -161,6 +190,10 @@ body {
   opacity: 0;
   width: 0;
   height: 0;
+}
+
+.field-radio__input:focus-visible ~ .field-radio__custom {
+  background: var(--color-green-200);
 }
 
 .field-radio__custom {
@@ -189,47 +222,24 @@ body {
 }
 
 .field-radio:has(.field-radio__input:checked) {
-  background: var(--color-green-200);
   border-color: var(--color-green-600);
 }
 
-.textarea {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.texxtarea__area {
-  font-size: 18px;
-  line-height: 1.5;
-  color: var(--color-grey-900);
-  border: 1px solid var(--color-grey-500);
-  border-radius: 8px;
-  padding: 12px 24px;
-  width: 100%;
-  height: 240px;  
-  cursor: pointer;
-  resize: none;
-}
-
-@media (min-width: 600px) {
-  .texxtarea__area {
-    height: 105px;  
-  }
-}
-
-.texxtarea__area:focus,
-.texxtarea__area:hover,
-.texxtarea__area:focus-visible {
-  border: 1px solid var(--color-green-600);
-  outline: none;
+.field-radio:has(.field-radio__input:focus-visible) {
+  background-color: var(--color-green-200); 
 }
 
 .checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 40px 0;
+}
+
+.checkbox__label {
   display: inline-flex;
   align-items: center;
   gap: 16px;
-  margin: 40px 0;
   cursor: pointer;
 }
 
@@ -238,6 +248,11 @@ body {
   opacity: 0;
   width: 0;
   height: 0;
+}
+
+.checkbox__input:focus-visible ~ .checkbox__custom {
+  background: var(--color-green-200);
+  outline: 5px solid var(--color-green-200);
 }
 
 .checkbox__custom {
@@ -280,6 +295,10 @@ body {
   border-radius: 8px;
   background: var(--color-green-600);
   cursor: pointer;
+}
+
+.form__button:focus-visible {
+  outline: 10px solid var(--color-green-200);
 }
 
 .form__button:hover {
